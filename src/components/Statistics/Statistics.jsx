@@ -1,3 +1,5 @@
+import React from 'react';
+
 const Statistics = ({ good, neutral, bad, totalFeedback, positivePercentage }) => (
   <ul>
     <li>
