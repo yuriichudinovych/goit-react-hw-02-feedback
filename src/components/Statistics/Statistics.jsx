@@ -1,22 +1,23 @@
 import React from 'react';
+import { StatisticItem } from './Statistics.styled';
 
 const Statistics = ({ good, neutral, bad, totalFeedback, positivePercentage }) => (
   <ul>
-    <li>
+    <StatisticItem>
       <p>good: {good}</p>
-    </li>
-    <li>
+    </StatisticItem>
+    <StatisticItem>
       <p>neutral:{neutral}</p>
-    </li>
-    <li>
+    </StatisticItem>
+    <StatisticItem>
       <p>bad: {bad} </p>
-    </li>
-    <li>
+    </StatisticItem>
+    <StatisticItem>
       <p>total: {totalFeedback} </p>
-    </li>
-    <li>
+    </StatisticItem>
+    <StatisticItem>
       <p>positive feedback: {positivePercentage}% </p>
-    </li>
+    </StatisticItem>
   </ul>
 );
 

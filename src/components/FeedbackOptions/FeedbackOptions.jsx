@@ -1,7 +1,9 @@
 import React from 'react';
 
+import { FeedbackBtnList } from './FeedbackOptions.styled';
+
 const FeedbackOptions = ({ leaveFeedback }) => (
-  <ul>
+  <FeedbackBtnList>
     <li>
       <button onClick={() => leaveFeedback('good')}>good</button>
     </li>
@@ -11,7 +13,7 @@ const FeedbackOptions = ({ leaveFeedback }) => (
     <li>
       <button onClick={() => leaveFeedback('bad')}>Bad</button>
     </li>
-  </ul>
+  </FeedbackBtnList>
 );
 
 export default FeedbackOptions;

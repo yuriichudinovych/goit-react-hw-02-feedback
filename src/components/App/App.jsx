@@ -4,6 +4,8 @@ import Section from 'components/Section';
 import Statistics from 'components/Statistics';
 import Notification from 'components/Notification';
 
+import { Container } from './App.styled';
+
 export class App extends Component {
   state = {
     good: 0,
@@ -40,7 +42,7 @@ export class App extends Component {
     const totalFeedback = this.countTotalFeedback();
     const positivePercentage = this.countPositiveFeedbackPercentage();
     return (
-      <>
+      <Container>
         <Section title="Please leave feedback">
           <FeedbackOptions leaveFeedback={this.onleaveFeedback} />
         </Section>
@@ -57,7 +59,7 @@ export class App extends Component {
             <Notification message="There is no feedback" />
           )}
         </Section>
-      </>
+      </Container>
     );
   }
 }
