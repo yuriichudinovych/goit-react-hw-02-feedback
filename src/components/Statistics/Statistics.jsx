@@ -1,17 +1,14 @@
 import React from 'react';
+import { nanoid } from 'nanoid';
 import { StatisticItem } from './Statistics.styled';
 
-const Statistics = ({ good, neutral, bad, totalFeedback, positivePercentage }) => (
+const Statistics = ({ feedbacksKeys, feedbacksValue, totalFeedback, positivePercentage }) => (
   <ul>
-    <StatisticItem>
-      <p>good: {good}</p>
-    </StatisticItem>
-    <StatisticItem>
-      <p>neutral:{neutral}</p>
-    </StatisticItem>
-    <StatisticItem>
-      <p>bad: {bad} </p>
-    </StatisticItem>
+    {feedbacksKeys.map(feedbackKey => (
+      <StatisticItem key={nanoid()}>
+        {feedbackKey}: {feedbacksValue[feedbackKey]}
+      </StatisticItem>
+    ))}
     <StatisticItem>
       <p>total: {totalFeedback} </p>
     </StatisticItem>

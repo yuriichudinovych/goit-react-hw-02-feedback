@@ -1,18 +1,15 @@
 import React from 'react';
+import { nanoid } from 'nanoid';
 
 import { FeedbackBtnList } from './FeedbackOptions.styled';
 
-const FeedbackOptions = ({ leaveFeedback }) => (
+const FeedbackOptions = ({ feedbacksKeys, leaveFeedback }) => (
   <FeedbackBtnList>
-    <li>
-      <button onClick={() => leaveFeedback('good')}>good</button>
-    </li>
-    <li>
-      <button onClick={() => leaveFeedback('neutral')}>neutral</button>
-    </li>
-    <li>
-      <button onClick={() => leaveFeedback('bad')}>Bad</button>
-    </li>
+    {feedbacksKeys.map(key => (
+      <li key={nanoid()}>
+        <button onClick={() => leaveFeedback(key)}>{key}</button>
+      </li>
+    ))}
   </FeedbackBtnList>
 );
 
